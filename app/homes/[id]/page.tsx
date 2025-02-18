@@ -15,20 +15,17 @@ import {
 
 const carDetails = {
   id: 1,
-  name: "Mercedes-Benz S-Class",
-  image:"",
-    // "https://images.unsplash.com/photo-1616788494672-ec7c48196f92?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80",
+  name: "Luxury Villa",
+  image: "/images/first_home.jpg",
   price: 200,
   description:
-    "Experience ultimate comfort and style with our premium Mercedes-Benz S-Class. Perfect for business trips or special occasions.",
+    "Experience ultimate comfort and with our luxury home. Perfect for you and your family.",
   features: [
-    "Leather seats",
-    "Advanced sound system",
-    "GPS navigation",
-    "Automatic transmission",
-    "Adaptive cruise control",
-    "Panoramic sunroof",
-  ],
+    "Well designed interiors",
+    "Stunning view",
+    "High-end amenities and finishes",
+    "5 bed rooms",
+    ],
 };
 
 export default function HomeDetail({ params }: { params: { id: string } }) {
@@ -69,7 +66,7 @@ export default function HomeDetail({ params }: { params: { id: string } }) {
           </ul>
           <Card>
             <CardHeader>
-              <CardTitle>Book This Car</CardTitle>
+              <CardTitle>Book this home</CardTitle>
               <CardDescription>Select your rental dates</CardDescription>
             </CardHeader>
             <CardContent>
