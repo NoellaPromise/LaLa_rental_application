@@ -25,29 +25,35 @@ export default function Home() {
     <div>
       <section className="relative w-full h-[500px] mb-20">
         <div className="absolute inset-0 w-full h-full">
-          <Image
-            src="/images/keys2.jpg"
-            alt="Background"
-            fill
-            priority
-            className="object-cover w-full h-full"
-          />
+          <video
+            className="w-full h-full object-cover"
+            autoPlay
+            loop
+            muted
+            playsInline
+          >
+            <source src="/videos/our_video.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
         </div>
         <div className="relative z-10 container mx-auto h-full flex flex-col items-center justify-center text-center">
-          <h1 className="text-3xl font-bold mb-4 text-[#053262]">
-            Welcome to LaLa home rentals
+          <div className="bg-white/10 p-8 rounded-lg ">
+          <h1 className="text-4xl font-bold mb-4 text-[#053262]">
+        WELCOME TO LALA HOME RENTALS
           </h1>
-          <p className="text-2xl text-gray-600 mb-8">
-            Your Next Home is Waiting – Start Searching Today!
+          <p className="text-3xl text-gray-800 font-bold mb-8">
+            Your next home is waiting – Start Searching Today!
           </p>
           <Button size="lg" asChild>
             <Link href="/homes">Browse Our housing complex</Link>
           </Button>
+          </div>
+        
         </div>
       </section>
 
       <div className="container mx-auto px-6">
-        <section className="mb-12">
+        <section className="mb-4">
           <h2 className="text-3xl font-semibold mb-6 text-[#053262]">
             Our top Listings
           </h2>
