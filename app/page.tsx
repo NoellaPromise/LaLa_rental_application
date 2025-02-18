@@ -23,7 +23,7 @@ export default function Home() {
 
   return (
     <div>
-      <section className="relative w-full h-[500px] mb-20">
+      <section className="relative w-full h-[500px] mb-8">
         <div className="absolute inset-0 w-full h-full">
           <video
             className="w-full h-full object-cover"
@@ -54,7 +54,7 @@ export default function Home() {
 
       <div className="container mx-auto px-6">
         <section className="mb-4">
-          <h2 className="text-3xl font-semibold mb-6 text-[#053262]">
+          <h2 className="text-3xl font-semibold mb-6 text-[#053262] text-center">
             Our top Listings
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
