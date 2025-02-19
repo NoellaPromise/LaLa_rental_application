@@ -27,7 +27,7 @@ export default function Home() {
             <h1 className="text-4xl font-bold mb-4 text-[#053262]">
               WELCOME TO LALA HOME RENTALS
             </h1>
-            <p className="text-3xl text-gray-800 font-bold mb-8">
+            <p className="text-3xl text-gray-700 font-bold mb-8">
               Your next home is waiting – Start Searching Today!
             </p>
             <Button size="lg" asChild>
