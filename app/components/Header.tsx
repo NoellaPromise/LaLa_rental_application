@@ -4,11 +4,11 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { supabase } from "@/lib/supabaseClient";
-import {
+import { 
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
-  DropdownMenuTrigger,
+  DropdownMenuTrigger 
 } from "@/components/ui/dropdown-menu";
 import { User } from "lucide-react";
 
@@ -40,10 +40,7 @@ export default function Header() {
         <div className="space-x-4">
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
-              <Button
-                variant="ghost"
-                className="text-white hover:bg-white hover:text-"
-              >
+              <Button variant="ghost" className="hover:text-[#053262] hover:bg-white">
                 <User className="h-5 w-5 mr-2" />
                 Account
               </Button>
@@ -59,10 +56,7 @@ export default function Header() {
                   Register
                 </Link>
               </DropdownMenuItem>
-              <DropdownMenuItem
-                onClick={handleLogout}
-                className="cursor-pointer"
-              >
+              <DropdownMenuItem onClick={handleLogout} className="cursor-pointer">
                 Logout
               </DropdownMenuItem>
             </DropdownMenuContent>
