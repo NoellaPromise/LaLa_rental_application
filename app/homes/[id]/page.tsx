@@ -12,30 +12,27 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-
-const carDetails = {
-  id: 1,
-  name: "Luxury Villa",
-  image: "/images/first_home.jpg",
-  price: 200,
-  description:
-    "Experience ultimate comfort and with our luxury home. Perfect for you and your family.",
-  features: [
-    "Well designed interiors",
-    "Stunning view",
-    "High-end amenities and finishes",
-    "5 bed rooms",
-    ],
-};
+import { homes } from "@/lib/data"; // Import from the shared file
 
 export default function HomeDetail({ params }: { params: { id: string } }) {
   const [startDate, setStartDate] = useState("");
   const [endDate, setEndDate] = useState("");
 
+  // Find the home that matches the id parameter
+  const homeId = parseInt(params.id);
+  const homeDetails = homes.find(home => home.id === homeId) || {
+    id: 0,
+    name: "Home not found",
+    image: "/placeholder.svg",
+    price: 0,
+    description: "The requested home could not be found.",
+    features: []
+  };
+
   const handleBooking = (e: React.FormEvent) => {
     e.preventDefault();
     // Handle booking logic here
-    console.log("Booking submitted:", { startDate, endDate });
+    console.log("Booking submitted:", { startDate, endDate, homeId: homeDetails.id });
   };
 
   return (
@@ -43,22 +40,22 @@ export default function HomeDetail({ params }: { params: { id: string } }) {
       <div className="grid md:grid-cols-2 gap-8">
         <div>
           <Image
-            src={carDetails.image || "/placeholder.svg"}
-            alt={carDetails.name}
+            src={homeDetails.image || "/placeholder.svg"}
+            alt={homeDetails.name}
             width={800}
             height={600}
             className="rounded-lg shadow-md object-cover"
           />
         </div>
         <div>
-          <h1 className="text-3xl font-bold mb-4">{carDetails.name}</h1>
+          <h1 className="text-3xl font-bold mb-4">{homeDetails.name}</h1>
           <p className="text-xl text-gray-600 mb-4">
-            ${carDetails.price} per day
+            ${homeDetails.price} per night
           </p>
-          <p className="text-gray-700 mb-6">{carDetails.description}</p>
+          <p className="text-gray-700 mb-6">{homeDetails.description}</p>
           <h2 className="text-2xl font-semibold mb-4">Features</h2>
           <ul className="list-disc list-inside mb-6">
-            {carDetails.features.map((feature, index) => (
+            {homeDetails.features.map((feature, index) => (
               <li key={index} className="text-gray-700">
                 {feature}
               </li>
