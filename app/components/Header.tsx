@@ -1,19 +1,23 @@
-
-"use client"
+"use client";
 
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { supabase } from "@/lib/supabaseClient"; // Import Supabase client
+import { supabase } from "@/lib/supabaseClient";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
+import { User } from "lucide-react";
 
 export default function Header() {
-  // Logout function
   const handleLogout = async () => {
     const { error } = await supabase.auth.signOut();
     if (error) {
       console.error("Error logging out:", error.message);
     } else {
-      // Redirect to the login page after logout
       window.location.href = "/login";
     }
   };
@@ -34,13 +38,35 @@ export default function Header() {
         </div>
 
         <div className="space-x-4">
-          <Link href="/login">
-            <Button className="text-[#053262] bg-white">Login</Button>
-          </Link>
-          {/* Replace the Link with a Button for logout */}
-          <Button onClick={handleLogout} className="bg-white text-[#053262]">
-            Logout
-          </Button>
+          <DropdownMenu>
+            <DropdownMenuTrigger asChild>
+              <Button
+                variant="ghost"
+                className="text-white hover:bg-white hover:text-"
+              >
+                <User className="h-5 w-5 mr-2" />
+                Account
+              </Button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent align="end" className="w-48">
+              <DropdownMenuItem asChild>
+                <Link href="/login" className="w-full cursor-pointer">
+                  Login
+                </Link>
+              </DropdownMenuItem>
+              <DropdownMenuItem asChild>
+                <Link href="/register" className="w-full cursor-pointer">
+                  Register
+                </Link>
+              </DropdownMenuItem>
+              <DropdownMenuItem
+                onClick={handleLogout}
+                className="cursor-pointer"
+              >
+                Logout
+              </DropdownMenuItem>
+            </DropdownMenuContent>
+          </DropdownMenu>
         </div>
       </nav>
     </header>
