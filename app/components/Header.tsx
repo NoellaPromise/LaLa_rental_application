@@ -1,16 +1,17 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
 import { supabase } from "@/lib/supabaseClient";
-import { 
+import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
-  DropdownMenuTrigger 
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { User } from "lucide-react";
+import { Menu } from "lucide-react";
 
 export default function Header() {
   const handleLogout = async () => {
@@ -25,38 +26,71 @@ export default function Header() {
   return (
     <header className="bg-[#053262] text-white shadow-md">
       <nav className="container mx-auto px-6 py-4 flex justify-between items-center">
-        <Link href="/" className="text-lg font-bold text-white">
-          LALA Home Rentals
+        <Link href="/" className="flex items-center">
+          <Image
+            src="/images/lala.png" 
+            alt="LALA Home Rentals"
+            width={120}
+            height={40}
+            className="object-contain"
+          />
         </Link>
 
-        <div className="flex-1 mx-6 max-w-md">
-          <Input
-            type="text"
-            placeholder="Search for homes..."
-            className="w-full px-4 py-2 rounded-md text-white"
-          />
-        </div>
+        <div className="flex items-center space-x-4">
+          <Link href="/login">
+            <Button
+              variant="ghost"
+              className="hover:text-[#053262] hover:bg-white"
+            >
+              Login
+            </Button>
+          </Link>
+          <Link href="/register">
+            <Button
+              variant="ghost"
+              className="hover:text-[#053262] hover:bg-white"
+            >
+              Register
+            </Button>
+          </Link>
 
-        <div className="space-x-4">
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
-              <Button variant="ghost" className="hover:text-[#053262] hover:bg-white">
-                <User className="h-5 w-5 mr-2" />
-                Account
+              <Button
+                variant="ghost"
+                className="hover:text-[#053262] hover:bg-white"
+              >
+                <Menu className="h-5 w-5 mr-2" />
+                Menu
               </Button>
             </DropdownMenuTrigger>
             <DropdownMenuContent align="end" className="w-48">
               <DropdownMenuItem asChild>
-                <Link href="/login" className="w-full cursor-pointer">
-                  Login
+                <Link href="/homes" className="w-full cursor-pointer">
+                  Book a house
                 </Link>
               </DropdownMenuItem>
               <DropdownMenuItem asChild>
-                <Link href="/register" className="w-full cursor-pointer">
-                  Register
+                <Link href="/my-bookings" className="w-full cursor-pointer">
+                  My Bookings
                 </Link>
               </DropdownMenuItem>
-              <DropdownMenuItem onClick={handleLogout} className="cursor-pointer">
+              <DropdownMenuSeparator />
+              <DropdownMenuItem asChild>
+                <Link href="/my-houses" className="w-full cursor-pointer">
+                  See my houses
+                </Link>
+              </DropdownMenuItem>
+              <DropdownMenuItem asChild>
+                <Link href="/add-house" className="w-full cursor-pointer">
+                  Add A New House
+                </Link>
+              </DropdownMenuItem>
+              <DropdownMenuSeparator />
+              <DropdownMenuItem
+                onClick={handleLogout}
+                className="cursor-pointer"
+              >
                 Logout
               </DropdownMenuItem>
             </DropdownMenuContent>
