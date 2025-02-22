@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { homes } from "@/lib/data"; // Import from the shared file
+import { homes } from "@/lib/data"; 
 
 export default function Home() {
   // Get the first 3 homes for featured homes
