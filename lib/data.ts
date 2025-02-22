@@ -1,3 +1,5 @@
+import { House } from "@/types";
+
 export const homes = [
   {
     id: 1,
@@ -116,3 +118,18 @@ export const homes = [
   },
 
 ];
+
+let dynamicHomes = [...homes]; // This will be our "database" that we can modify
+
+export const getHomes = () => dynamicHomes;
+export const addHome = (home: Omit<House, "id">) => {
+  const newHome = {
+    ...home,
+    id: dynamicHomes.length + 1,
+  };
+  dynamicHomes.push(newHome);
+  return newHome;
+};
+export const deleteHome = (id: number) => {
+  dynamicHomes = dynamicHomes.filter(home => home.id !== id);
+};
