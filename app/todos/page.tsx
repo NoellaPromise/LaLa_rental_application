@@ -1,20 +1,14 @@
 import React from "react";
-import { CirclePlus } from "lucide-react";
+
+import TodoList from "@/app/components/TodoList";
 
 const page = () => {
   return (
-    <div className="container mx-auto px-6 py-8">
-      <h1 className="text-center font-semibold text-[#DD7210] text-2xl">
+    <div>
+      <h1 className="text-center font-semibold text-[#DD7210] text-2xl p-4">
         Todos app
       </h1>
-      <div className="flex  justify-center gap-4 p-8 ">
-        <input
-          type="text"
-          placeholder="Add Todos..."
-          className="text-center  rounded-full text-gray-600"
-        />
-        <CirclePlus />
-      </div>
+      <TodoList />
     </div>
   );
 };
