@@ -36,6 +36,7 @@ export default function SimpleForm() {
         setFormData({ name: "", email: "", password: "", message: "" }); // Reset form
       } else {
         alert("Failed to submit form.");
+        setFormData({ name: "", email: "", password: "", message: "" });
       }
     } catch (error) {
       console.error("Error submitting form:", error);
