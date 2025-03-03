@@ -23,7 +23,7 @@ export default function Page() {
 
   return (
     <div>
-      <h1 className="text-center font-bold p-4 text-blue-950 text-lg">Today&apos;s weather</h1>
+      <h1 className="text-center font-bold p-4 text-blue-950 text-lg">What&apos;s the weather today</h1>
       {/* <Image
         src="https://images.unsplash.com/photo-1675640145657-7ac2289cb4bb?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
         alt="Weather"
