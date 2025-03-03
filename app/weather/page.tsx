@@ -43,6 +43,7 @@ export default function Page() {
       <button onClick={fetchWeather} className="text-center bg-blue-950 text-white p-4 rounded-lg">Show weather</button>
       </div>
       {weather.main &&<Weather data={weather}/>}
+      
     </div>
   );
 }

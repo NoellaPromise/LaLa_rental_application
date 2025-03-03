@@ -5,7 +5,7 @@ function Weather({ data }) {
     <>
       <div className="text-center flex justify-center gap-5 font-bold text-2xl">
         <p>{data.weather[0].main}</p>
-        <p>{data.main.temp.toFixed(0)}</p>
+        <p>{data.main.temp.toFixed(0)}&#176;</p>
       </div>
     </>
   );
