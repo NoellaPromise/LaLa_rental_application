@@ -26,7 +26,6 @@ export function BookingsProvider({ children }: { children: React.ReactNode }) {
 
   const addBooking = (booking: Booking) => {
     setBookings((prev) => [...prev, booking]);
-    // Optional: Log to verify booking is added
     console.log("Adding booking:", booking);
     console.log("Updated bookings:", [...bookings, booking]);
   };
