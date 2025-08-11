@@ -22,8 +22,7 @@ export default function Header() {
       window.location.href = "/login";
     }
   };
-
-  return (
+return (
     <header className="bg-[#053262] text-white shadow-md">
       <nav className="container mx-auto px-6 py-4 flex justify-between items-center">
         <Link href="/" className="flex items-center">
