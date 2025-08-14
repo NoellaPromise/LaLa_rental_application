@@ -6,7 +6,6 @@ export async function GET() {
   const houses = getHomes();
   return NextResponse.json(houses);
 }
-
 export async function POST(request: Request) {
   const data = await request.json();
   const newHouse = addHome(data);
