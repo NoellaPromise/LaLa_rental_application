@@ -1,5 +1,4 @@
 "use client";
-
 import { useBookings } from "@/app/components/BookingsManager";
 import { Button } from "@/components/ui/button";
 import {
